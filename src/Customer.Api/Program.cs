@@ -10,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
 builder.Services.AddHealthChecks()
-    .AddCheck<DbHealthCheck>("Database");
+    //.AddCheck<DbHealthCheck>("Database");
+    .AddNpgSql(config["ConnectionStrings:DockerConn"]);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
