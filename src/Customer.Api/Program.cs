@@ -33,4 +33,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Seed();
+
 app.Run();
